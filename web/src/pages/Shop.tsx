@@ -1,5 +1,5 @@
 import { useProducts } from "@/features/catalog/queries";
-import ProductCard from "./components/ProductCard";
+import ProductCard from "@/components/ui/ProductCard";
 import { useSearchParams } from "react-router-dom";
 
 export default function Shop() {
@@ -18,7 +18,7 @@ export default function Shop() {
         </div>
       ) : (
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {products.map((p) => <ProductCard key={p._id} p={p} />)}
+          {products.map((p) => <ProductCard key={p._id} id={p._id} title={p.title} price={p.pricing.price} image={p.assets?.main || 'https://placehold.co/600x600'} />)}
         </div>
       )}
     </div>

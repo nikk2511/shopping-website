@@ -13,10 +13,17 @@
     color: var(--mt-ink);
     font-feature-settings: "liga" 1, "kern" 1;
   }
+  html.dark, html.dark body, html.dark #root {
+    background: var(--mt-black);
+    color: var(--mt-bone);
+  }
   h1, h2, h3 {
     @apply font-display tracking-wide;
   }
   .card {
     @apply bg-white/70 backdrop-blur shadow-soft rounded-2xl border border-black/5;
+  }
+  .dark .card {
+    @apply bg-mt-ink-70 border-white/5;
   }
 }

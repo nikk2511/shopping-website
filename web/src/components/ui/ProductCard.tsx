@@ -64,6 +64,7 @@
 //     </Card>
 //   );
 // }
+import { Link } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -77,16 +78,18 @@ interface ProductCardProps {
 
 export default function ProductCard({ id, title, price, image }: ProductCardProps) {
   return (
-    <Card className="shadow-soft bg-white rounded-xl overflow-hidden hover:scale-[1.03] transition cursor-pointer">
-      <div className="relative w-full h-56 overflow-hidden">
-        <img src={image} className="w-full h-full object-cover" alt={title} />
-        <Badge className="absolute top-2 left-2 bg-mt-gold text-black">New</Badge>
-      </div>
+    <Card className="shadow-lg hover:shadow-xl bg-white rounded-xl overflow-hidden hover:scale-[1.03] transition cursor-pointer">
+      <Link to={`/product/${id}`}>
+        <div className="relative w-full h-56 overflow-hidden">
+          <img src={image} className="w-full h-full object-cover" alt={title} />
+          <Badge className="absolute top-2 left-2 bg-mt-gold text-black">New</Badge>
+        </div>
 
-      <CardContent>
-        <h3 className="font-display text-lg truncate">{title}</h3>
-        <p className="text-mt-emerald font-bold text-xl">${price}</p>
-      </CardContent>
+        <CardContent>
+          <h3 className="font-display text-lg truncate">{title}</h3>
+          <p className="text-mt-emerald font-bold text-xl">${price}</p>
+        </CardContent>
+      </Link>
 
       <CardFooter>
         <Button className="w-full bg-mt-ink hover:bg-mt-gold hover:text-mt-ink">

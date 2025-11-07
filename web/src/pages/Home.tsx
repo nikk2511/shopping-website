@@ -1,5 +1,5 @@
 import { useHealth, useProducts } from "@/features/catalog/queries";
-import ProductCard from "@/components/ProductCard";
+import ProductCard from "@/components/ui/ProductCard";
 
 export default function Home() {
   const { data: health } = useHealth();
@@ -7,7 +7,7 @@ export default function Home() {
 
   return (
     <div className="space-y-10">
-      <section className="card p-8 text-center">
+      <section className="card p-8 text-center bg-gradient-to-r from-mt-black to-mt-ink text-white rounded-lg">
         <h1 className="text-3xl md:text-5xl">MonisTech</h1>
         <p className="mt-2 text-lg opacity-80">Rare finds. Refined taste.</p>
         <div className="mt-2 text-xs opacity-60">API: {health ? "connected" : "…"} </div>
@@ -23,7 +23,7 @@ export default function Home() {
           </div>
         ) : (
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {products.map((p) => <ProductCard key={p._id} p={p} />)}
+            {products.map((p) => <ProductCard key={p._id} id={p._id} title={p.title} price={p.pricing.price} image={p.assets?.main || 'https://placehold.co/600x600'} />)}
           </div>
         )}
       </section>

@@ -1,7 +1,9 @@
 :root {
-  --mt-black: #0a0a0a;
-  --mt-ink: #111114;
-  --mt-bone: #f6f6f3;
-  --mt-gold: #c6a35e;
-  --mt-emerald: #2e7d6f;
+  --mt-black: #1a202c;
+  --mt-black-rgb: 26, 32, 44;
+  --mt-ink: #2d3748;
+  --mt-ink-rgb: 45, 55, 72;
+  --mt-bone: #f7fafc;
+  --mt-gold: #ed8936;
+  --mt-emerald: #4299e1;
 }

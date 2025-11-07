@@ -3,7 +3,7 @@ import { Toaster } from "@/components/ui/toaster";
 import Layout from "@/app/Layout";
 import Home from "@/pages/Home";
 import Shop from "@/pages/Shop";
-import ProductCard from "@/components/ProductCard";  // ← TEMPORARY TEST
+import Product from "@/pages/Product";
 
 import Cart from "@/pages/Cart";
 import Checkout from "@/pages/Checkout";
